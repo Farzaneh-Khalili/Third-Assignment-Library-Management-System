@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Scanner;
+
 public class Library {
     /*
     * The library should have a list of books.
@@ -8,12 +13,33 @@ public class Library {
 
     //book related functions
 
+
+    List<Book> listOfBooks =new ArrayList<Book>();
+    Scanner scanner = new Scanner(System.in);
+
     public void addBook(){
-        //TODO
+        Book B = new Book();
+        System.out.println("Enter name and author of the book");
+        String name = scanner.next();
+        B.setName(name);
+        String author = scanner.next();
+        B.getAuthor(author);
+        System.out.println("Enter number of pages, price, year of publish and ISBN of the book");
+        int pages = scanner.nextInt();
+        B.setPages(pages);
+        int price = scanner.nextInt();
+        B.setPrice(price);
+        int yearOfPublish = scanner.nextInt();
+        B.getYearOfPublish();
+        int ISBN = scanner.nextInt();
+        B.getISBN(ISBN);
+
     }
 
     public void removeBook(){
-        //TODO
+        System.out.println("Enter name of the book you want to remove from the library");
+        String name = scanner.next();
+
     }
 
     public void searchBook(){
@@ -25,7 +51,13 @@ public class Library {
     }
 
     public void doesBookExist(){
-        //TODO
+        System.out.println("Enter the name of the book you are looking for ");
+        String name = scanner.next();
+        if(listOfBooks.contains(name)) {
+            System.out.println(name + " is present in the list.");
+        } else {
+            System.out.println(name + " is not present in the list.");
+        }
     }
 
     public void increaseBook(){
@@ -39,7 +71,12 @@ public class Library {
     //user related functions
 
     public void addUser(){
-        //TODO
+        User U = new User();
+        System.out.println("Enter username and password of the new user");
+        String username = scanner.next();
+        String password = scanner.next();
+        U.setUsername(username);
+        U.setPassword(password);
     }
 
     public void removeUser(){
@@ -61,7 +98,12 @@ public class Library {
     //librarian related functions
 
     public void addLibrarian(){
-        //TODO
+        Librarian L = new Librarian();
+        System.out.println("Enter the username and password of the new librarian");
+        String username = scanner.next();
+        String password = scanner.next();
+        L.setUsername(username);
+        L.setPassword(password);
     }
 
     public void removeLibrarian(){

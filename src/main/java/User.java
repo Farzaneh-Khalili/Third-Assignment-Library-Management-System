@@ -5,6 +5,12 @@ public class User {
 
     private String username;
     private String password;
+
+    /*public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }*/
+
     List<String> rentedBooks = new ArrayList<>();
     public void setUsername(String newUsername) {
         username = newUsername;
