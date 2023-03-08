@@ -7,13 +7,23 @@ public class Main {
 
     public static void main(String[] args) {
 
+        List<String> listOfBooks = new ArrayList<String>();
+        List<String> listOfUsers = new ArrayList<String>();
+        List<String> listOfLibrarians = new ArrayList<String>();
+
+        HashMap<String, Book> mapper = new HashMap<String, Book>();
+        HashMap <String, User> mapperUser = new HashMap<String, User>();
+        HashMap <String, Librarian> mapperLibrarian = new HashMap<String, Librarian>();
+
         Librarian mainLibrarian = new Librarian("librarian");
         mainLibrarian.setUsername("librarian");
         mainLibrarian.setPassword("pass1234");
+        listOfLibrarians.add("librarian");
 
         User firstUser = new User("user");
         firstUser.setUsername("user");
         firstUser.setPassword("user78910");
+        listOfUsers.add("user");
 
         Book first = new Book("one");
         first.setAuthor("person one");
@@ -21,6 +31,7 @@ public class Main {
         first.setPages(150);
         first.setISBN(3);
         first.setYearOfPublish(2019);
+        listOfBooks.add("one");
 
 
         Library lib = new Library();
