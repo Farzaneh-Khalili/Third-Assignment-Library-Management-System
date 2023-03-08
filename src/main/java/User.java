@@ -12,6 +12,11 @@ public class User {
     }*/
 
     List<String> rentedBooks = new ArrayList<>();
+
+    public User(String username) {
+
+    }
+
     public void setUsername(String newUsername) {
         username = newUsername;
     }
@@ -19,7 +24,11 @@ public class User {
         password = newPassword;
     }
     public void rentBook(String book){
+
        rentedBooks.add(book);
+    }
+    public String getPassword() {
+        return password;
     }
 
     public void returnBook(String book){

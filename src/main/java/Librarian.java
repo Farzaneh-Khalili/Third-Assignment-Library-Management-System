@@ -7,6 +7,10 @@ public class Librarian {
      */
     private String username;
     private String password;
+
+    public Librarian(String username) {
+    }
+
     public String getUsername() {
         return username;
     }

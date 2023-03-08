@@ -6,6 +6,11 @@ public class Book {
     private int price;
     private int yearOfPublish;
     private int ISBN;
+    private boolean isRented = false;
+
+    public Book(String name) {
+
+    }
 
     /*public Book(String name, String author, int pages, int price, int yearOfPublish, int ISBN) {
 
@@ -46,7 +51,7 @@ public class Book {
         return name;
     }
 
-    public String getAuthor(String author) {
+    public String getAuthor() {
         return this.author;
     }
 
@@ -62,7 +67,16 @@ public class Book {
         return yearOfPublish;
     }
 
-    public int getISBN(int ISBN) {
+    public int getISBN() {
         return this.ISBN;
+    }
+
+    public boolean isRented() {
+        return isRented;
+    }
+
+    //setIsRented for changing the situation of the book(it is rented or not)
+    public void setIsRented() {
+        isRented = !isRented;
     }
 }
