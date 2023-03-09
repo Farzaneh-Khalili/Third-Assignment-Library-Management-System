@@ -7,35 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> listOfBooks = new ArrayList<String>();
-        List<String> listOfUsers = new ArrayList<String>();
-        List<String> listOfLibrarians = new ArrayList<String>();
-
-        HashMap<String, Book> mapper = new HashMap<String, Book>();
-        HashMap <String, User> mapperUser = new HashMap<String, User>();
-        HashMap <String, Librarian> mapperLibrarian = new HashMap<String, Librarian>();
-
-        Librarian mainLibrarian = new Librarian("librarian");
-        mainLibrarian.setUsername("librarian");
-        mainLibrarian.setPassword("pass1234");
-        listOfLibrarians.add("librarian");
-
-        User firstUser = new User("user");
-        firstUser.setUsername("user");
-        firstUser.setPassword("user78910");
-        listOfUsers.add("user");
-
-        Book first = new Book("one");
-        first.setAuthor("person one");
-        first.setPrice(40000);
-        first.setPages(150);
-        first.setISBN(3);
-        first.setYearOfPublish(2019);
-        listOfBooks.add("one");
-
-
-        Library lib = new Library();
-
         runMenu();
 
     }
@@ -52,6 +23,28 @@ public class Main {
         HashMap <String, User> mapperUser = new HashMap<String, User>();
         HashMap <String, Librarian> mapperLibrarian = new HashMap<String, Librarian>();
 
+        Librarian mainLibrarian = new Librarian("librarian");
+        mainLibrarian.setUsername("librarian");
+        mainLibrarian.setPassword("pass1234");
+        listOfLibrarians.add("librarian");
+
+       User firstUser = new User("user");
+        firstUser.setUsername("user");
+        firstUser.setPassword("user78910");
+        listOfUsers.add("user");
+
+        /*new User("user");
+        listOfUsers.add("user");*/
+
+        Book first = new Book("one");
+        first.setAuthor("person one");
+        first.setPrice(40000);
+        first.setPages(150);
+        first.setISBN(3);
+        first.setYearOfPublish(2019);
+        listOfBooks.add("one");
+
+        System.out.println(listOfUsers);
         System.out.println("Welcome to the Library\nPlease choose who are you? Enter the number");
         System.out.println("\n1.User   \n2.Librarain");
 
@@ -68,6 +61,7 @@ public class Main {
                         String username = scanner.next();
                         String password = scanner.next();
                         if(listOfUsers.contains(username)) {
+                            System.out.println("correct");
                             User value = mapperUser.get(username);
                             if (password.equals(value.getPassword())) {
                                 System.out.println("welcome to the library " + username);
@@ -88,7 +82,6 @@ public class Main {
                                             System.out.println("Renting was successful");
                                             runMenu();
                                         }
-                                        break;
                                     case 2 :
                                         System.out.println("Enter name of the book you want to return");
                                         String bookReturn = scanner.next();
@@ -96,7 +89,6 @@ public class Main {
                                         valueBookReturn.setIsRented();
 
                                         runMenu();
-                                        break;
                                     default:
                                         System.out.println("Choose 1 or 2");
                                         runMenu();
@@ -116,8 +108,6 @@ public class Main {
                         lib.addUser();
                         runMenu();
 
-
-                        break;
                 }
             case 2 :
                 System.out.println("Enter your username and your password");
@@ -125,7 +115,7 @@ public class Main {
                 String password = scanner.next();
                 if (listOfLibrarians.contains(username)) {
                     Librarian value = mapperLibrarian.get(username);
-                    if (password.equals(value.getPassword())) {
+                    if (value.getPassword().equals(password)) {
                         System.out.println("Welcome to the library " + username);
                         System.out.println("Which part do you want to go?\n1.Book\n2.User\n3.Librarain");
                         int librarian = scanner.nextInt();
