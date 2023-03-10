@@ -39,8 +39,9 @@ public class Library {
         int ISBN = scanner.nextInt();
         B.getISBN();
 
-        mapper.put(name, new Book(name));
+        mapper.put(name, B);
         listOfBooks.add(name);
+        System.out.println(name + "added");
 
     }
 
@@ -147,7 +148,7 @@ public class Library {
 
                 U.setUsername(username);
                 U.setPassword(password);
-                mapperUser.put(username, new User(username));
+                mapperUser.put(username, U);
                 listOfUsers.add(username);
             }
             else
@@ -222,7 +223,7 @@ public class Library {
 
                 L.setUsername(username);
                 L.setPassword(password);
-                mapperLibrarian.put(username, new Librarian(username));
+                mapperLibrarian.put(username,L);
                 listOfLibrarians.add(username);
             }
             else

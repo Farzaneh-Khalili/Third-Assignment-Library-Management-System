@@ -6,10 +6,10 @@ public class User {
     private String username;
     private String password;
 
-    /*public User(String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-    }*/
+    }
 
     List<String> rentedBooks = new ArrayList<>();
 
@@ -29,6 +29,10 @@ public class User {
     }
     public String getPassword() {
         return password;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void returnBook(String book){

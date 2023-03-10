@@ -25,24 +25,27 @@ public class Main {
 
         Librarian mainLibrarian = new Librarian("librarian");
         mainLibrarian.setUsername("librarian");
+        String nameLibrarian = mainLibrarian.getUsername();
         mainLibrarian.setPassword("pass1234");
         listOfLibrarians.add("librarian");
+        mapperLibrarian.put(nameLibrarian, mainLibrarian);
 
-       User firstUser = new User("user");
+        User firstUser = new User("user", "user78910");
         firstUser.setUsername("user");
+        String nameUser = firstUser.getUsername();
         firstUser.setPassword("user78910");
         listOfUsers.add("user");
-
-        /*new User("user");
-        listOfUsers.add("user");*/
+        mapperUser.put(nameUser, firstUser);
 
         Book first = new Book("one");
         first.setAuthor("person one");
+        String nameBook = first.getName();
         first.setPrice(40000);
         first.setPages(150);
         first.setISBN(3);
         first.setYearOfPublish(2019);
         listOfBooks.add("one");
+        mapper.put(nameBook, first);
 
         System.out.println(listOfUsers);
         System.out.println("Welcome to the Library\nPlease choose who are you? Enter the number");
@@ -61,7 +64,6 @@ public class Main {
                         String username = scanner.next();
                         String password = scanner.next();
                         if(listOfUsers.contains(username)) {
-                            System.out.println("correct");
                             User value = mapperUser.get(username);
                             if (password.equals(value.getPassword())) {
                                 System.out.println("welcome to the library " + username);
@@ -79,7 +81,7 @@ public class Main {
                                         else {
                                             valueBookRent.setIsRented();
                                             listOfBooks.add(bookRent);
-                                            System.out.println("Renting was successful");
+                                            System.out.println("Returning was successful");
                                             runMenu();
                                         }
                                     case 2 :
@@ -115,7 +117,7 @@ public class Main {
                 String password = scanner.next();
                 if (listOfLibrarians.contains(username)) {
                     Librarian value = mapperLibrarian.get(username);
-                    if (value.getPassword().equals(password)) {
+                    if (password.equals(value.getPassword())) {
                         System.out.println("Welcome to the library " + username);
                         System.out.println("Which part do you want to go?\n1.Book\n2.User\n3.Librarain");
                         int librarian = scanner.nextInt();

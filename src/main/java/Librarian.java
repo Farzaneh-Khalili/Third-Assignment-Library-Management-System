@@ -19,11 +19,11 @@ public class Librarian {
         return password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String newUsername) {
+        username = newUsername;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String newPassword) {
+        password = newPassword;
     }
 }
