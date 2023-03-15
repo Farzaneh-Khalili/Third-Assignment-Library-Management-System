@@ -1,12 +1,41 @@
-public class User {
-    //User should have a list of books
-    //User should have a username and a password
+import java.util.ArrayList;
+import java.util.List;
 
-    public void rentBook(){
-        //TODO
+public class User {
+
+    private String username;
+    private String password;
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public void returnBook(){
-        //TODO
+    List<String> rentedBooks = new ArrayList<>();
+
+    public User(String username) {
+
+    }
+
+    public void setUsername(String newUsername) {
+        username = newUsername;
+    }
+    public void setPassword(String newPassword) {
+        password = newPassword;
+    }
+    public void rentBook(String book){
+
+       rentedBooks.add(book);
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void returnBook(String book){
+        rentedBooks.remove(book);
     }
 }
